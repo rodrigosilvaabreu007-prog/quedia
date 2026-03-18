@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seus Eventos - EventHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+  <div class="container">
+    <header>
+      <nav class="menu">
+          <span class="logo-provisoria">EH</span>
+        <a href="index.html">Início</a>
+        <a href="event-form.html">Cadastrar Evento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="meus-eventos.html">Seus Eventos</a>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+      <h1 class="logo">Seus Eventos</h1>
+    </header>
+    <main>
+      <section id="meus-eventos-cards"></section>
+    </main>
+  </div>
+
+  <!-- Ícone de perfil fixo -->
+  <div id="icone-perfil" onclick="irParaPerfil()" title="Meu Perfil">
+    <img id="icone-perfil-img" src="" alt="Foto do Perfil">
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="theme.js"></script>
+  <script src="meus-eventos.js"></script>
+  <script src="global.js"></script>
+  </script>
+</body>
+</html>

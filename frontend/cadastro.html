@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro - EventHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+  <div class="container">
+    <header>
+      <nav class="menu">
+        <span class="logo-provisoria">EH</span>
+        <a href="index.html">Início</a>
+        <a href="event-form.html">Cadastrar Evento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="meus-eventos.html">Seus Eventos</a>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+      <h1 class="logo">Cadastro</h1>
+    </header>
+    <main>
+      <form id="cadastro-form" class="card-form">
+        <label>Nome<input type="text" name="nome" required></label>
+        
+        <label>Email<input type="email" name="email" id="email" required onblur="validarEmail()">
+          <small id="email-erro" style="color: #ff6b6b; display: none;"></small>
+        </label>
+        
+        <label>Senha
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="password" name="senha" id="senha" required>
+            <button type="button" onclick="toggleSenha('senha')" style="padding: 8px 12px; background: var(--cor-principal, #00bfff); border: none; border-radius: 6px; cursor: pointer; color: #fff; font-weight: 600;">👁</button>
+          </div>
+        </label>
+        
+        <label>Confirmar Senha
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="password" name="confirmar_senha" id="confirmar-senha" required>
+            <button type="button" onclick="toggleSenha('confirmar-senha')" style="padding: 8px 12px; background: var(--cor-principal, #00bfff); border: none; border-radius: 6px; cursor: pointer; color: #fff; font-weight: 600;">👁</button>
+          </div>
+        </label>
+        
+        <label>Estado<select name="estado" id="estado" required onchange="atualizarCidades()">
+          <option value="">Selecione um estado</option>
+        </select></label>
+        
+        <label>Cidade<select name="cidade" id="cidade" required>
+          <option value="">Selecione primeiro um estado</option>
+        </select></label>
+        
+        <label>Preferências de Categorias (Opcional)
+          <div id="preferencias-categorias" style="margin-top: 12px;"></div>
+        </label>
+        
+        <button type="submit">Cadastrar</button>
+      </form>
+      <div id="mensagem-cadastro"></div>
+      <p style="text-align: center; margin-top: 24px;">Já possui uma conta? <a href="login.html" style="color: var(--text-primary, #00bfff);">Faça login</a></p>
+    </main>
+  </div>
+
+  <!-- Ícone de perfil fixo -->
+  <div id="icone-perfil" onclick="irParaPerfil()" title="Meu Perfil">
+    <img id="icone-perfil-img" src="" alt="Foto do Perfil">
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="theme.js"></script>
+  <script src="estados-cidades.js"></script>
+  <script src="categorias.js"></script>
+  <script src="cadastro.js"></script>
+  <script src="global.js"></script>
+</body>
+</html>

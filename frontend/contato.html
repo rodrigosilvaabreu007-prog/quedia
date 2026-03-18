@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - EventHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+  <div class="container">
+    <header>
+      <nav class="menu">
+        <span class="logo-provisoria">EH</span>
+        <a href="index.html">Início</a>
+        <a href="event-form.html">Cadastrar Evento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="meus-eventos.html">Seus Eventos</a>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+      <h1 class="logo">Contato</h1>
+    </header>
+    <main>
+      <div style="display: flex; gap: 48px; align-items: flex-start;">
+        <div style="flex: 1;">
+          <h2>Entre em Contato</h2>
+          <p>Tem uma dúvida ou sugestão? Envie-nos uma mensagem! Responderemos em breve.</p>
+          <p>Estamos aqui para ajudar e melhorar continuamente a plataforma.</p>
+        </div>
+        <form id="contato-form" class="card-form" style="flex: 1;">
+          <label>Nome<input type="text" name="nome" required></label>
+          <label>Email<input type="email" name="email" required></label>
+          <label>Mensagem<textarea name="mensagem" required></textarea></label>
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+      <div id="mensagem-contato"></div>
+    </main>
+  </div>
+
+  <!-- Ícone de perfil fixo -->
+  <div id="icone-perfil" onclick="irParaPerfil()" title="Meu Perfil">
+    <img id="icone-perfil-img" src="" alt="Foto do Perfil">
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="theme.js"></script>
+  <script src="contato.js"></script>
+  <script src="global.js"></script>
+</body>
+</html>

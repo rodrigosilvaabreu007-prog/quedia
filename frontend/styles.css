@@ -1,0 +1,344 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: var(--bg-primary, #181a20);
+  color: var(--text-primary, #fff);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: var(--text-primary, #aaa);
+  margin-top: 8px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.menu a {
+  color: var(--text-primary, #fff);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.menu a:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.logo-provisoria {
+  color: var(--text-primary, #00bfff);
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-right: 48px;
+  margin-left: 16px;
+}
+
+#event-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  #event-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #event-cards {
+    grid-template-columns: 1fr;
+  }
+  .menu {
+    gap: 12px;
+  }
+  .logo-provisoria {
+    margin-right: 12px;
+  }
+}
+
+.event-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.event-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 48px rgba(0,0,0,0.2);
+}
+
+.event-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.event-info {
+  padding: 20px;
+}
+
+.event-info h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+}
+
+.event-info p {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.event-date, .event-city, .event-price {
+  display: block;
+  margin: 8px 0;
+  font-size: 0.9rem;
+}
+
+.interest-btn, .edit-btn, .delete-btn {
+  background: var(--cor-principal, #00bfff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  cursor: pointer;
+  margin-right: 8px;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+
+.interest-btn:hover, .edit-btn:hover, .delete-btn:hover {
+  background: #0077b6;
+}
+
+.card-form {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.card-form label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.card-form input, .card-form textarea, .card-form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: rgba(255,255,255,0.08);
+  color: var(--text-primary, #fff);
+  font-family: inherit;
+  margin-top: 8px;
+  box-sizing: border-box;
+}
+
+.card-form input:focus, .card-form textarea:focus, .card-form select:focus {
+  outline: none;
+  border-color: var(--cor-principal, #00bfff);
+  background: rgba(255,255,255,0.12);
+}
+
+.card-form button {
+  background: var(--cor-principal, #00bfff);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: background 0.2s;
+}
+
+.card-form button:hover {
+  background: #0077b6;
+}
+
+.sobre {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sobre h2 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.sobre p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+#mensagem-evento, #mensagem-contato, #mensagem-cadastro, #mensagem-login, #mensagem-editar {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+  color: #00ff00;
+  display: none;
+}
+#mensagem-evento:not(:empty), #mensagem-contato:not(:empty), #mensagem-cadastro:not(:empty), #mensagem-login:not(:empty), #mensagem-editar:not(:empty) {
+  display: block;
+  background: rgba(0,255,0,0.1);
+  border: 1px solid rgba(0,255,0,0.3);
+}
+
+.interest-count {
+  display: block;
+  margin: 8px 0;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 900px) {
+  main > div {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+}
+
+fieldset {
+  border: 1px solid rgba(255,255,255,0.2) !important;
+  padding: 16px !important;
+  border-radius: 8px !important;
+  margin-bottom: 16px !important;
+  background: rgba(255,255,255,0.02) !important;
+}
+
+legend {
+  padding: 0 8px;
+  color: var(--text-primary, #fff);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Ícone de perfil fixo */
+#icone-perfil {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  z-index: 1000;
+  border: 3px solid var(--bg-primary, #0f1419);
+  overflow: hidden;
+  background: var(--cor-principal, #00bfff);
+}
+
+#icone-perfil.has-image {
+  background: transparent;
+}
+
+#icone-perfil:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+#icone-perfil:active {
+  transform: scale(0.96);
+}
+
+#icone-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+#icone-perfil::before {
+  content: "👤";
+  font-size: 24px;
+  color: #000;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.2s ease;
+}
+
+#icone-perfil.has-image::before {
+  opacity: 0;
+}
+
+#icone-perfil img[src=""],
+#icone-perfil img:not([src]) {
+  display: none;
+}
+
+/* Responsividade para mobile */
+@media (max-width: 768px) {
+  #icone-perfil {
+    bottom: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+  }
+}
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - EventHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+  <div class="container">
+    <header>
+      <nav class="menu">
+        <span class="logo-provisoria">EH</span>
+        <a href="index.html">Início</a>
+        <a href="event-form.html">Cadastrar Evento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="meus-eventos.html">Seus Eventos</a>
+        <a href="login.html">Login</a>
+        <a href="cadastro.html">Cadastro</a>
+      </nav>
+      </nav>
+      <h1 class="logo">Login</h1>
+    </header>
+    <main>
+      <form id="login-form" class="card-form">
+        <label>Email<input type="email" name="email" required></label>
+        <label>Senha
+          <div style="display: flex; gap: 8px; align-items: center;">
+            <input type="password" name="senha" id="senha" required>
+            <button type="button" onclick="toggleSenha('senha')" style="padding: 8px 12px; background: var(--cor-principal, #00bfff); border: none; border-radius: 6px; cursor: pointer; color: #fff; font-weight: 600;">👁</button>
+          </div>
+        </label>
+        <button type="submit">Entrar</button>
+      </form>
+      <div id="mensagem-login"></div>
+      <p style="text-align: center; margin-top: 24px;">Ainda não criou sua conta? <a href="cadastro.html" style="color: var(--text-primary, #00bfff);">Cadastre-se aqui</a></p>
+    </main>
+  </div>
+
+  <!-- Ícone de perfil fixo -->
+  <div id="icone-perfil" onclick="irParaPerfil()" title="Meu Perfil">
+    <img id="icone-perfil-img" src="" alt="Foto do Perfil">
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="theme.js"></script>
+  <script>
+    // Função para mostrar/esconder senha
+    function toggleSenha(inputId) {
+      const input = document.getElementById(inputId);
+      if (input.type === 'password') {
+        input.type = 'text';
+      } else {
+        input.type = 'password';
+      }
+    }
+  </script>
+  <script src="login.js"></script>
+  <script src="global.js"></script>
+</body>
+</html>

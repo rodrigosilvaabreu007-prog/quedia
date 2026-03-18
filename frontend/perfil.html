@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Perfil - EventHub</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+  <canvas id="particles-bg"></canvas>
+  <div class="container">
+    <header>
+      <nav class="menu">
+        <span class="logo-provisoria">EH</span>
+        <a href="index.html">Início</a>
+        <a href="event-form.html">Cadastrar Evento</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="contato.html">Contato</a>
+        <a href="meus-eventos.html">Seus Eventos</a>
+      </nav>
+      <h1 class="logo">Meu Perfil</h1>
+    </header>
+    <main>
+      <div id="conteudo-perfil">
+        <!-- Será preenchido pelo JavaScript -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal de edição de perfil -->
+  <div id="modal-editar" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div style="background: var(--bg-primary, #0f1419); border: 2px solid var(--cor-principal, #00bfff); border-radius: 12px; padding: 32px; width: 90%; max-width: 500px; max-height: 80vh; overflow-y: auto; position: relative;">
+      <button onclick="fecharModalEditar()" style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: var(--text-primary, #00bfff);">✕</button>
+      
+      <h2 style="margin-top: 0; color: var(--text-primary, #00bfff);">Editar Perfil</h2>
+      <form id="form-editar" style="display: grid; gap: 16px;">
+        <label style="display: grid;">
+          Nome
+          <input type="text" id="editar-nome" style="padding: 12px; border: 1px solid var(--cor-principal, #00bfff); border-radius: 4px; background: var(--bg-secondary, #1a2332); color: var(--text-color, #fff); margin-top: 6px;" required>
+        </label>
+        
+        <label style="display: grid;">
+          Email
+          <input type="email" id="editar-email" style="padding: 12px; border: 1px solid var(--cor-principal, #00bfff); border-radius: 4px; background: var(--bg-secondary, #1a2332); color: var(--text-color, #fff); margin-top: 6px;" required>
+        </label>
+        
+        <label style="display: grid;">
+          Estado
+          <select id="editar-estado" style="padding: 12px; border: 1px solid var(--cor-principal, #00bfff); border-radius: 4px; background: var(--bg-secondary, #1a2332); color: var(--text-color, #fff); margin-top: 6px;" required>
+            <option value="">Selecione um estado</option>
+          </select>
+        </label>
+        
+        <label style="display: grid;">
+          Cidade
+          <select id="editar-cidade" style="padding: 12px; border: 1px solid var(--cor-principal, #00bfff); border-radius: 4px; background: var(--bg-secondary, #1a2332); color: var(--text-color, #fff); margin-top: 6px;" required>
+            <option value="">Selecione primeiro um estado</option>
+          </select>
+        </label>
+        
+        <div id="editar-preferencias-container" style="display: grid;"></div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px;">
+          <button type="button" onclick="fecharModalEditar()" style="padding: 12px; background: #666; border: none; border-radius: 4px; color: #fff; font-weight: 600; cursor: pointer;">Cancelar</button>
+          <button type="submit" style="padding: 12px; background: var(--cor-principal, #00bfff); border: none; border-radius: 4px; color: #000; font-weight: 600; cursor: pointer;">Salvar Alterações</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal de confirmação de exclusão -->
+  <div id="modal-deletar" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; display: flex; align-items: center; justify-content: center;">
+    <div style="background: var(--bg-primary, #0f1419); border: 2px solid #ff4444; border-radius: 12px; padding: 32px; width: 90%; max-width: 400px; text-align: center; position: relative;">
+      <button onclick="fecharModalDeletar()" style="position: absolute; top: 16px; right: 16px; background: none; border: none; font-size: 24px; cursor: pointer; color: #ff4444;">✕</button>
+      
+      <h2 style="margin-top: 0; color: #ff4444;">Deletar Conta</h2>
+      <p style="color: #aaa; margin: 24px 0;">Tem certeza que deseja deletar sua conta? Esta ação é irreversível e todos os seus dados serão removidos.</p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <button onclick="fecharModalDeletar()" style="padding: 12px; background: #666; border: none; border-radius: 4px; color: #fff; font-weight: 600; cursor: pointer;">Cancelar</button>
+        <button onclick="confirmarDelecao()" style="padding: 12px; background: #ff4444; border: none; border-radius: 4px; color: #fff; font-weight: 600; cursor: pointer;">Deletar Conta</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="particles.js"></script>
+  <script src="theme.js"></script>
+  <script src="cidades-brasil.js"></script>
+  <script src="categorias.js"></script>
+  <script src="perfil.js"></script>
+</body>
+</html>
