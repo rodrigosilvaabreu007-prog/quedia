@@ -7,7 +7,7 @@ const usuarioId = 1;
 async function carregarMeusEventos() {
   container.innerHTML = '';
   try {
-    const resposta = await fetch(`${API_BASE}/api/eventos?organizador_id=${usuarioId}`);
+    const resposta = await fetch(API_URL + `/eventos?organizador_id=${usuarioId}`);
     const eventos = await resposta.json();
     eventos.forEach(evento => {
       const card = document.createElement('div');
@@ -35,7 +35,7 @@ container.addEventListener('click', async e => {
   if (e.target.classList.contains('delete-btn')) {
     const eventoId = e.target.dataset.id;
     if (confirm('Deseja realmente excluir este evento?')) {
-      await fetch(`${API_BASE}/api/eventos/${eventoId}`, {
+      await fetch(API_URL + `/eventos/${eventoId}`, {
         method: 'DELETE'
       });
       carregarMeusEventos();

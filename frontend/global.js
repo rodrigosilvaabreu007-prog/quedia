@@ -1,7 +1,17 @@
-// Arquivo global para funcionalidades compartilhadas em todas as páginas
+// Determinar URL da API baseado no ambiente
+const API_URL = (() => {
+  const hostname = window.location.hostname;
+  
+  // Para desenvolvimento local
+  if (hostname === 'localhost' || hostname === '127.0.0.1') {
+    return 'http://localhost:3000/api';
+  }
+  
+  // Para produção (será configurado via variável de ambiente)
+  return window.location.origin.replace('frontend', 'api') + '/api' || 'https://api.quedia.com.br/api';
+})();
 
-// Base URL da API
-const API_BASE = 'https://seu-backend.onrender.com';
+console.log('API URL:', API_URL);
 
 // Função para inicializar o ícone de perfil
 function inicializarIconePerfil() {

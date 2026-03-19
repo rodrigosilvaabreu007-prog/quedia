@@ -395,7 +395,7 @@ async function salvarAlteracoes(e) {
   };
   
   try {
-    const resposta = await fetch(`${API_BASE}/api/usuarios/${usuarioAtual.id}`, {
+    const resposta = await fetch(`https://quedia-production.up.railway.app/${usuarioAtual.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -453,7 +453,7 @@ async function confirmarDelecao() {
   const token = localStorage.getItem('eventhub-token');
   
   try {
-    const resposta = await fetch(`${API_BASE}/api/usuarios/${usuarioAtual.id}`, {
+    const resposta = await fetch(`https://quedia-production.up.railway.app/${usuarioAtual.id}`, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${token}`

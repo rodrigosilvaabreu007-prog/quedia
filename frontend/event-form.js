@@ -180,7 +180,7 @@ form.addEventListener('submit', async (e) => {
   dados.categoria = document.getElementById('categoria-principal').value;
 
   try {
-    const resposta = await fetch(`${API_BASE}/api/eventos`, {
+    const resposta = await fetch(API_URL + '/eventos', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)

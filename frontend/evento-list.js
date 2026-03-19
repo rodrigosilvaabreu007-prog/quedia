@@ -75,7 +75,7 @@ function criarCardEvento(evento) {
 // Função para carregar eventos
 async function carregarEventos() {
   try {
-    const res = await fetch(`${API_BASE}/api/eventos`);
+    const res = await fetch(API_URL + '/eventos');
     const dados = await res.json();
     todosEventos = Array.isArray(dados) ? dados : [];
     

@@ -8,7 +8,7 @@ form.addEventListener('submit', async e => {
   console.log('Tentando login com email:', dados.email);
   
   try {
-    const resposta = await fetch(`${API_BASE}/api/login`, {
+    const resposta = await fetch(API_URL + '/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(dados)
